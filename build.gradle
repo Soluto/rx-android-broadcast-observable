@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    jcenter()
+    maven { url "http://solutonexus:8081/nexus/content/repositories/development/" }
+}
+
+dependencies {
+    compile 'io.reactivex:rxjava:1.1.0'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.robolectric:robolectric:3.0'
+    testCompile "org.mockito:mockito-core:1.10.19"
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.5.0'
+    }
+}
+
+uploadArchives {
+    apply plugin: 'maven'
+    repositories {
+        mavenDeployer {
+            repository(url: "http://solutonexus.soluto.local:8081/nexus/content/repositories/development/") {
+                authentication(userName: "admin", password: "po09!@QW")
+            }
+            pom.groupId = "com.soluto"
+            pom.artifactId = 'rxbroadcastobservable'
+            pom.version = '0.0.1'
+        }
+    }
+}
