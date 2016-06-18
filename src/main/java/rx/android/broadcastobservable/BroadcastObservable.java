@@ -1,4 +1,4 @@
-package com.soluto.rxbroadcastobservable;
+package rx.android.broadcastobservable;
 
 import android.content.Context;
 import android.content.Intent;

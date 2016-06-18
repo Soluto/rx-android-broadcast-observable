@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.soluto.rxbroadcastobservable;
+package rx.android.broadcastobservable;
 
 import android.app.Application;
 import android.content.Intent;
@@ -20,7 +20,6 @@ import android.content.IntentFilter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InOrder;
-import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
 
@@ -28,6 +27,7 @@ import rx.Observable;
 import rx.Observer;
 import rx.Subscription;
 import rx.observers.TestObserver;
+import rx.android.broadcastobservable.BroadcastObservable;
 
 
 import static org.mockito.Matchers.any;

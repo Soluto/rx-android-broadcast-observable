@@ -15,7 +15,7 @@
 // copied from version 0.25 of RxAndroid
 //https://raw.githubusercontent.com/ReactiveX/RxAndroid/v0.25.0/rxandroid/src/main/java/rx/android/content/OnSubscribeBroadcastRegister.java
 
-package com.soluto.rxbroadcastobservable;
+package rx.android.broadcastobservable;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
